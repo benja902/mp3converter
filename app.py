@@ -59,4 +59,5 @@ def descargar_archivo(filename):
         return "Archivo no encontrado", 404
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 10000))  # Usa el puerto que Render asigna
+    app.run(host='0.0.0.0', port=port)
